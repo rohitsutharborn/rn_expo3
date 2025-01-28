@@ -1,19 +1,4 @@
 {
-  "name": "rn_expo3",
-  "displayName": "rn_expo3",
-  "extra": {
-    "eas": {
-      "projectId": "ff90503c-0837-48f2-9a55-60612d5aed12"
-    }
-  },
-  "owner": "rohitsuthartechm",
-  "slug": "rnexpo3",
-  "runtimeVersion": "1.0.0",
-  "updates": {
-    "url": "https://u.expo.dev/ff90503c-0837-48f2-9a55-60612d5aed12"
-  },
-  "android": {},
-  "ios": {},
   "expo": {
     "name": "rn_expo3",
     "slug": "rnexpo3",
@@ -29,8 +14,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "[your-project-id]"
+        "projectId": "ff90503c-0837-48f2-9a55-60612d5aed12"
       }
-    }
+    },
+    "owner": "rohitsuthartechm"
   }
 }
