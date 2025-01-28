@@ -24,13 +24,25 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import * as Updates from 'expo-updates';
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
+async function checkForUpdates() {
+  const update = await Updates.checkForUpdateAsync();
+  // if (update.isAvailable) {
+  //   await Updates.fetchUpdateAsync();
+  //   Updates.reloadAsync(); // Reload to apply the update
+  // }
+}
+
 function Section({children, title}: SectionProps): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+
+  checkForUpdates();
+
   return (
     <View style={styles.sectionContainer}>
       <Text
