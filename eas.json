@@ -9,9 +9,11 @@
       "distribution": "internal"
     },
     "preview": {
+      "channel": "ota-channel",
       "distribution": "internal"
     },
     "production": {
+      "channel": "ota-channel-prod",
       "autoIncrement": false
     }
   },

@@ -24,24 +24,33 @@ import {
   LearnMoreLinks,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import * as Updates from 'expo-updates';
+import Updates from 'expo-updates';
 
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
 async function checkForUpdates() {
-  const update = await Updates.checkForUpdateAsync();
-  // if (update.isAvailable) {
-  //   await Updates.fetchUpdateAsync();
-  //   Updates.reloadAsync(); // Reload to apply the update
-  // }
+  if (__DEV__) {
+    // const update = await Updates.checkForUpdateAsync();
+    // const update = await Updates.useUpdates();
+    //   .then(update => {
+    //     console.log('Update available:', update);
+    //   })
+    //   .catch(error => {
+    //     console.error('Update check failed:', error);
+    //   });
+    // if (update.isAvailable) {
+    //   await Updates.fetchUpdateAsync();
+    //   Updates.reloadAsync(); // Reload to apply the update
+    // }
+  }
 }
 
 function Section({children, title}: SectionProps): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
 
-  checkForUpdates();
+  // checkForUpdates();
 
   return (
     <View style={styles.sectionContainer}>
@@ -73,6 +82,9 @@ function App(): React.JSX.Element {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
+
+  const {currentlyRunning, isUpdateAvailable, isUpdatePending} =
+    Updates.useUpdates();
 
   return (
     <SafeAreaView style={backgroundStyle}>

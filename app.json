@@ -7,7 +7,11 @@
       "bundleIdentifier": "com.rn-expo3"
     },
     "android": {
-      "package": "com.rn_expo3"
+      "package": "com.rn_expo3",
+      "experimental": {
+        "useFabricRenderer": false
+      },
+      "fallbackToCacheTimeout": 0
     },
     "runtimeVersion": "1.0.0",
     "updates": {
